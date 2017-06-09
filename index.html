@@ -12,6 +12,41 @@
 <body>
 
     <script>
+        var arr = [65, 60, 99, 49, 77, 82, 22, 13];
+
+        bind(arr);
+        render();
+
+        function bind(dataSet) {
+            var selection = d3.select("body")
+                .selectAll("div")
+                .data(arr);
+
+            selection.enter().append("div");
+
+            selection.exit().remove();
+
+        }
+
+        function render() {
+            d3.selectAll("body>div").text(function(d) {
+                return d
+            });
+        }
+
+        //       for (var i = 0; i < arr.length; i++) {
+        //            d3.select("body")
+        //                .append("div")
+        //                .datum(arr[i])
+        //                .text(function(d) {
+        //                    return d;
+        //                });
+        //        }
+        //
+
+    </script>
+    <hr>
+    <script>
         //    var arr=[85,66,99,49,77,59];
         //    
         //    var body=d3.select("body");
@@ -48,6 +83,8 @@
         //      function mid(d) { // d.number = +d.number; // d.amount = +d.amount; // return d; // }
 
     </script>
+
+
 
 
 </body>
